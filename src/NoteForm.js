@@ -42,12 +42,12 @@ class NoteForm extends React.Component {
           <p>
             <input type="text" name="title" value={this.state.noteTitle} onChange={this.updateTitle} placeholder="Title your note" />
           </p>
-          <button onClick={this.deleteNote}>
-            <i className="fa fa-trash-o" />
-          </button>
           <p>
             <textarea name="body" cols="30" rows="10" value={this.state.note} onChange={this.updateNote} placeholder="Just start typing..."></textarea>
           </p>
+          <button onClick={this.deleteNote}>
+            <i className="fa fa-trash-o" />
+          </button>
         </form>
       </div>
     )
