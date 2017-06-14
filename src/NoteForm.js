@@ -3,6 +3,13 @@ import React from 'react'
 import './NoteForm.css'
 
 class NoteForm extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      noteTitle: ''
+    }
+  }
+  
   render() {
     return (
       <div className="NoteForm">
