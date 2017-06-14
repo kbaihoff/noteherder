@@ -1,9 +1,21 @@
 import React from 'react'
+
 import './NoteForm.css'
 
 class NoteForm extends React.Component {
   render() {
-    return <p>FORM!</p>
+    return (
+      <div className="NoteForm">
+        <form>
+          <p>
+            <input type="text" name="title" placeholder="Title your note" value="" />
+          </p>
+          <p>
+            <textarea name="body" cols="30" rows="10" placeholder="Just start typing..."></textarea>
+          </p>
+        </form>
+      </div>
+    )
   }
 }
 
