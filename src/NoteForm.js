@@ -12,12 +12,12 @@ class NoteForm extends React.Component {
     this.deleteNote = this.deleteNote.bind(this)
     this.updateTitle = this.updateTitle.bind(this)
     this.updateNote = this.updateNote.bind(this)
-    console.log(props)
+
   }
 
   deleteNote(ev) {
     ev.preventDefault()
-    console.log(ev.target, ev.target.parentElement, ev.target.closest('form'))
+    this.props.formToMain(this.state.noteTitle)
     this.setState({
       noteTitle: '',
       note: '',

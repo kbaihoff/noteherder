@@ -9,10 +9,18 @@ const Main = () => {
   return (
     <div className="Main">
       <Sidebar />
-      <NoteList />
-      <NoteForm />
+      <NoteList formToList={formToList.bind(this)}/>
+      <NoteForm formToMain={formToMain.bind(this)}/>
     </div>
   )
+}
+
+function formToMain(title) {
+  console.log(title)
+}
+
+function formToList() {
+  console.log('formToList')
 }
 
 export default Main
