@@ -6,14 +6,22 @@ class NoteForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      noteTitle: ''
+      noteTitle: '',
+      note: '',
     }
     this.updateTitle = this.updateTitle.bind(this)
+    this.updateNote = this.updateNote.bind(this)
   }
 
   updateTitle(ev) {
     this.setState({
       noteTitle: ev.target.value
+    })
+  }
+
+  updateNote(ev) {
+    this.setState({
+      note: ev.target.value
     })
   }
   
@@ -25,7 +33,7 @@ class NoteForm extends React.Component {
             <input type="text" name="title" value={this.state.noteTitle} onChange={this.updateTitle} placeholder="Title your note" />
           </p>
           <p>
-            <textarea name="body" cols="30" rows="10" placeholder="Just start typing..."></textarea>
+            <textarea name="body" cols="30" rows="10" value={this.state.note} onChange={this.updateNote} placeholder="Just start typing..."></textarea>
           </p>
         </form>
       </div>
