@@ -8,6 +8,13 @@ class NoteForm extends React.Component {
     this.state = {
       noteTitle: ''
     }
+    this.updateTitle = this.updateTitle.bind(this)
+  }
+
+  updateTitle(ev) {
+    this.setState({
+      noteTitle: ev.target.value
+    })
   }
   
   render() {
@@ -15,7 +22,7 @@ class NoteForm extends React.Component {
       <div className="NoteForm">
         <form>
           <p>
-            <input type="text" name="title" placeholder="Title your note" value="" />
+            <input type="text" name="title" value={this.state.noteTitle} onChange={this.updateTitle} placeholder="Title your note" />
           </p>
           <p>
             <textarea name="body" cols="30" rows="10" placeholder="Just start typing..."></textarea>
