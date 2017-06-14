@@ -12,6 +12,7 @@ class NoteForm extends React.Component {
     this.deleteNote = this.deleteNote.bind(this)
     this.updateTitle = this.updateTitle.bind(this)
     this.updateNote = this.updateNote.bind(this)
+    console.log(props)
   }
 
   deleteNote(ev) {
