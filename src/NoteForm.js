@@ -17,7 +17,7 @@ class NoteForm extends React.Component {
 
   deleteNote(ev) {
     ev.preventDefault()
-    this.props.formToMain(this.state.noteTitle)
+    this.props.titleToDeleteFM(this.state.noteTitle)
     this.setState({
       noteTitle: '',
       note: '',
