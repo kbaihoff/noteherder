@@ -6,12 +6,14 @@ class NoteList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      notes: props.notes,
+      notes: props.notesML,
     }
     this.openNote = this.openNote.bind(this)
   }
 
   openNote(ev) {
+    this.props.noteToOpenLM()
+
     const noteTitle = ev.target.closest('li').childNodes[0].childNodes[0].textContent
     const note = ev.target.closest('li').childNodes[0].childNodes[1].textContent
     const formTitle = ev.target.closest('.NoteList').nextElementSibling.childNodes[0].childNodes[0].childNodes[0]

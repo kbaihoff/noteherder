@@ -25,20 +25,26 @@ class Main extends React.Component {
           noteContent: "Cambrian explosion radio telescope, circumnavigated citizens of distant epochs brain is the seed of intelligence two ghostly white figures in coveralls and helmets are soflty dancing galaxies inconspicuous motes of rock and gas",
         },
       ],
-      titleToDelete: '',
     }
   }
   
-  titleToDeleteFM(title) {
-    this.setState({
-      titleToDelete: title,
-    }, () => console.log(this.state))
+  noteToOpenLM() {
+    console.log('Form to main open')
   }
 
-  resetMainStateLM() {
-    this.setState({
-      titleToDelete: '',
-    }, () => console.log(this.state))
+  titleToDeleteFM(title) {
+    for (let i = 0; i < this.state.notes.length; i++) {
+      console.log(title)
+      if (this.state.notes[i].noteTitle === title) {
+        console.log('delete this title: ' + title)
+      }
+    }
+    
+    
+    
+    // this.setState({
+    //   titleToDelete: title,
+    // }, () => console.log(this.state))
   }
     
   render() {
@@ -46,8 +52,8 @@ class Main extends React.Component {
       <div className="Main">
         <Sidebar />
         <NoteList
-          resetMainStateLM={this.resetMainStateLM.bind(this)}
-          notes={this.state.notes}
+          notesML={this.state.notes}
+          noteToOpenLM={this.noteToOpenLM.bind(this)}
         />
         <NoteForm
           titleToDeleteFM={this.titleToDeleteFM.bind(this)}
