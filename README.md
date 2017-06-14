@@ -1899,3 +1899,22 @@ This will only work for locales that have been explicitly imported before.
 ## Something Missing?
 
 If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebookincubator/create-react-app/issues) or [contribute some!](https://github.com/facebookincubator/create-react-app/edit/master/packages/react-scripts/template/README.md)
+
+
+# Noteherder
+
+## Day 7 Homework
+
+Finish making these components look acceptable.
+
+### Bonus Credit
+
+* Make the form work!
+
+### Super Mega Bonus Credit
+
+* Make a working delete button
+
+### Super Mega Bonus Credit Hyper Fighting
+
+* When you click on a note in the list, populate the form with the data from that note
