@@ -1,3 +1,14 @@
+i.fa-trash-o {
+  cursor: pointer;
+  color: #ccc;
+  vertical-align: middle;
+  margin-left: 1em;
+}
+
+i.fa-trash-o:hover {
+  color: #999;
+}
+
 .NoteForm {
   flex-grow: 1;
   padding: 0 3rem;

@@ -10,16 +10,7 @@ h1, h2, h3, h4, h5 {
   color: #008BF8;
 }
 
-i.fa-trash-o {
-  cursor: pointer;
-  color: #ccc;
-  vertical-align: middle;
-  margin-left: 1em;
-}
 
-i.fa-trash-o:hover {
-  color: #999;
-}
 
 
 
@@ -53,6 +44,17 @@ img {
   display: flex;
   height: 100vh;
   align-items: stretch;
+}
+
+i.fa-trash-o {
+  cursor: pointer;
+  color: #ccc;
+  vertical-align: middle;
+  margin-left: 1em;
+}
+
+i.fa-trash-o:hover {
+  color: #999;
 }
 
 .Nav {
