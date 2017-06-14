@@ -6,8 +6,8 @@ class NoteForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      noteTitle: '',
-      note: '',
+      title: props.noteToOpenTitleMF,
+      content: props.noteToOpenContentMF,
     }
     this.deleteNote = this.deleteNote.bind(this)
     this.updateTitle = this.updateTitle.bind(this)
@@ -17,22 +17,22 @@ class NoteForm extends React.Component {
 
   deleteNote(ev) {
     ev.preventDefault()
-    this.props.titleToDeleteFM(this.state.noteTitle)
+    this.props.titleToDeleteFM(this.state.title)
     this.setState({
-      noteTitle: '',
-      note: '',
+      title: '',
+      content: '',
     })
   }
 
   updateTitle(ev) {
     this.setState({
-      noteTitle: ev.target.value
+      title: ev.target.value
     })
   }
 
   updateNote(ev) {
     this.setState({
-      note: ev.target.value
+      content: ev.target.value
     })
   }
   
@@ -41,10 +41,10 @@ class NoteForm extends React.Component {
       <div className="NoteForm">
         <form>
           <p>
-            <input type="text" name="title" value={this.state.noteTitle} onChange={this.updateTitle} placeholder="Title your note" />
+            <input type="text" name="title" value={this.state.title} onChange={this.updateTitle} placeholder="Title your note" />
           </p>
           <p>
-            <textarea name="body" cols="30" rows="10" value={this.state.note} onChange={this.updateNote} placeholder="Just start typing..."></textarea>
+            <textarea name="body" cols="30" rows="10" value={this.state.content} onChange={this.updateNote} placeholder="Just start typing..."></textarea>
           </p>
           <button id="delete-button" onClick={this.deleteNote}>
             <i className="fa fa-trash-o" />

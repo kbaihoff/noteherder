@@ -25,11 +25,17 @@ class Main extends React.Component {
           noteContent: "Cambrian explosion radio telescope, circumnavigated citizens of distant epochs brain is the seed of intelligence two ghostly white figures in coveralls and helmets are soflty dancing galaxies inconspicuous motes of rock and gas",
         },
       ],
+
+      noteToOpenTitleMF: '',
+      noteToOpenContentMF: '',
     }
   }
   
-  noteToOpenLM() {
-    console.log('Form to main open')
+  noteToOpenLM(title, content) {
+    this.setState({
+      noteToOpenTitleMF: title,
+      noteToOpenContentMF: content,
+    }, () => console.log(this.state))
   }
 
   titleToDeleteFM(title) {
@@ -39,8 +45,6 @@ class Main extends React.Component {
         console.log('delete this title: ' + title)
       }
     }
-    
-    
     
     // this.setState({
     //   titleToDelete: title,
@@ -56,6 +60,8 @@ class Main extends React.Component {
           noteToOpenLM={this.noteToOpenLM.bind(this)}
         />
         <NoteForm
+          noteToOpenTitleMF={this.state.noteToOpenTitleMF}
+          noteToOpenContentMF={this.state.noteToOpenContentMF}
           titleToDeleteFM={this.titleToDeleteFM.bind(this)}
         />
       </div>
