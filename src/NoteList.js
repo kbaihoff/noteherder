@@ -29,8 +29,8 @@ class NoteList extends React.Component {
   openNote(ev) {
     const noteTitle = ev.target.closest('li').childNodes[0].childNodes[0].textContent
     const note = ev.target.closest('li').childNodes[0].childNodes[1].textContent
-    const formTitle = ev.target.closest('ul').parentElement.nextElementSibling.childNodes[0].childNodes[0].childNodes[0]
-    const formNote = ev.target.closest('ul').parentElement.nextElementSibling.childNodes[0].childNodes[1].childNodes[0]
+    const formTitle = ev.target.closest('.NoteList').nextElementSibling.childNodes[0].childNodes[0].childNodes[0]
+    const formNote = ev.target.closest('.NoteList').nextElementSibling.childNodes[0].childNodes[1].childNodes[0]
     formTitle.value = noteTitle
     formNote.value = note
   }
