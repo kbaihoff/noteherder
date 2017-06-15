@@ -29,6 +29,13 @@ class Main extends React.Component {
       noteToOpenContentMF: '',
     }
   }
+
+  newNoteSM() {
+    this.setState({
+      noteToOpenTitleMF: '',
+      noteToOpenContentMF: '',
+    }, () => console.log('Completed newNoteSM()'))
+  }
   
   noteToOpenLM(title, content) {
     this.setState({
@@ -66,7 +73,9 @@ class Main extends React.Component {
   render() {
     return (
       <div className="Main">
-        <Sidebar />
+        <Sidebar
+          newNoteSM={this.newNoteSM.bind(this)}
+        />
         <NoteList
           notesML={this.state.notes}
           noteToOpenLM={this.noteToOpenLM.bind(this)}
