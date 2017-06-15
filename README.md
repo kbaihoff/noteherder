@@ -1918,3 +1918,7 @@ Finish making these components look acceptable.
 ### Super Mega Bonus Credit Hyper Fighting
 
 * When you click on a note in the list, populate the form with the data from that note
+
+## Day 8 Homework
+
+Do the bonus credit stuff from Day 7
