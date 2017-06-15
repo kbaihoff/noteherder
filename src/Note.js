@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Note = ({ note }) => { // extract {note: {id, title, body}} from props
+const Note = ({ note }) => { // extract {note: {id, title, body}} from props from NoteList.js
   return (
     <li>
       <div className="note">
