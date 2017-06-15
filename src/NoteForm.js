@@ -12,7 +12,6 @@ class NoteForm extends React.Component {
     this.deleteNote = this.deleteNote.bind(this)
     this.updateTitle = this.updateTitle.bind(this)
     this.updateNote = this.updateNote.bind(this)
-
   }
 
   deleteNote(ev) {
@@ -34,6 +33,13 @@ class NoteForm extends React.Component {
     this.setState({
       content: ev.target.value
     })
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      title: nextProps.noteToOpenTitleMF,
+      content: nextProps.noteToOpenContentMF,
+    }, () => console.log('Completed componentWillReceiveProps()'))
   }
   
   render() {

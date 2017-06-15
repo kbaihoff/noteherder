@@ -25,7 +25,6 @@ class Main extends React.Component {
           noteContent: "Cambrian explosion radio telescope, circumnavigated citizens of distant epochs brain is the seed of intelligence two ghostly white figures in coveralls and helmets are soflty dancing galaxies inconspicuous motes of rock and gas",
         },
       ],
-
       noteToOpenTitleMF: '',
       noteToOpenContentMF: '',
     }
