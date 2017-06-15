@@ -1,6 +1,8 @@
 import React from 'react'
 
 import quill from './quill.svg'
+import newHover from './new-hover.png'
+import nNew from './new.png'
 import './Sidebar.css'
 
 class Sidebar extends React.Component {
@@ -20,8 +22,8 @@ class Sidebar extends React.Component {
           <img src={quill} alt="Noteherder" />
         </div>
         <button className="new-note" onClick={this.newNote}>
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1152887/new-hover.png" alt="New note" />
-          <img className="outline" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1152887/new.png" alt="New note" />
+          <img src={newHover} alt="New note" />
+          <img className="outline" src={nNew} alt="New note" />
         </button>
       </div>
     )
