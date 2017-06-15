@@ -1,4 +1,3 @@
-
 import React from 'react'
 
 import './NoteForm.css'
@@ -60,10 +59,10 @@ class NoteForm extends React.Component {
             <textarea name="body" cols="30" rows="10" value={this.state.content} onChange={this.updateNote} placeholder="Just start typing..."></textarea>
           </p>
           <button id="delete-button" onClick={this.deleteNote}>
-            <i className="fa fa-trash-o" />
+            <i className="fa fa-trash-o" />Trash
           </button>
           <button id="save-button" onClick={this.saveNote}>
-            <i className="fa fa-floppy-o" />
+            <i className="fa fa-floppy-o" />Save
           </button>
         </form>
       </div>
