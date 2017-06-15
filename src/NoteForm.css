@@ -18,14 +18,17 @@
 
 .NoteForm button i.fa {
   color: #999;
-  font-size: 2rem;
+  font-size: 3rem;
   margin: 0;
 }
 
 .NoteForm button i.fa.fa-trash-o, .NoteForm button i.fa.fa-floppy-o {
   cursor: pointer;
   vertical-align: middle;
-  margin-left: 1em;
+}
+
+.NoteForm button i.fa.fa-floppy-o {
+  margin-left: 5em;
 }
 
 .NoteForm button i.fa.fa-trash-o:hover {
