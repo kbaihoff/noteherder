@@ -10,6 +10,7 @@ class NoteForm extends React.Component {
       content: props.noteToOpenContentMF,
     }
     this.deleteNote = this.deleteNote.bind(this)
+    this.saveNote = this.saveNote.bind(this)
     this.updateTitle = this.updateTitle.bind(this)
     this.updateNote = this.updateNote.bind(this)
   }
@@ -17,6 +18,15 @@ class NoteForm extends React.Component {
   deleteNote(ev) {
     ev.preventDefault()
     this.props.titleToDeleteFM(this.state.title)
+  }
+
+  saveNote(ev) {
+    ev.preventDefault()
+    const note = {
+      title: ev.target.closest('form').childNodes[0].childNodes[0].value,
+      content: ev.target.closest('form').childNodes[1].childNodes[0].value,
+    }
+    this.props.noteToSaveFM(note)
   }
 
   updateTitle(ev) {
@@ -51,7 +61,7 @@ class NoteForm extends React.Component {
           <button id="delete-button" onClick={this.deleteNote}>
             <i className="fa fa-trash-o" />Trash
           </button>
-          <button id="save-button">
+          <button id="save-button" onClick={this.saveNote}>
             <i className="fa fa-floppy-o" />Save
           </button>
         </form>

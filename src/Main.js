@@ -52,6 +52,10 @@ class Main extends React.Component {
     }
     console.log('Completed titleToDeleteFM()')
   }
+
+  noteToSaveFM(note) {
+    console.log(note)
+  }
     
   render() {
     return (
@@ -65,6 +69,7 @@ class Main extends React.Component {
           noteToOpenTitleMF={this.state.noteToOpenTitleMF}
           noteToOpenContentMF={this.state.noteToOpenContentMF}
           titleToDeleteFM={this.titleToDeleteFM.bind(this)}
+          noteToSaveFM={this.noteToSaveFM.bind(this)}
         />
       </div>
     )
