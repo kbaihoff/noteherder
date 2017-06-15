@@ -23,8 +23,8 @@ class NoteForm extends React.Component {
   saveNote(ev) {
     ev.preventDefault()
     const note = {
-      title: ev.target.closest('form').childNodes[0].childNodes[0].value,
-      content: ev.target.closest('form').childNodes[1].childNodes[0].value,
+      noteTitle: ev.target.closest('form').childNodes[0].childNodes[0].value,
+      noteContent: ev.target.closest('form').childNodes[1].childNodes[0].value,
     }
     this.props.noteToSaveFM(note)
   }

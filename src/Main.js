@@ -54,7 +54,13 @@ class Main extends React.Component {
   }
 
   noteToSaveFM(note) {
-    console.log(note)
+    let newArray = [...this.state.notes]
+    newArray.unshift(note)
+    this.setState({
+      notes: newArray,
+      noteToOpenTitleMF: note.noteTitle,
+      noteToOpenContentMF: note.noteContent,
+    }, () => console.log('Completed noteToSaveFM()'))
   }
     
   render() {
