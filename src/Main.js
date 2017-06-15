@@ -38,9 +38,16 @@ class Main extends React.Component {
   }
 
   titleToDeleteFM(title) {
+    let newArray = this.state.notes
     for (let i = 0; i < this.state.notes.length; i++) {
       if (this.state.notes[i].noteTitle === title) {
-        this.state.notes.splice(i, 1)
+        newArray.splice(i, 1)
+        this.setState({
+          notes: newArray,
+          noteToOpenTitleMF: '',
+          noteToOpenContentMF: '',
+        })
+        break
       }
     }
     console.log('Completed titleToDeleteFM()')

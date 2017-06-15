@@ -17,6 +17,12 @@ class NoteList extends React.Component {
     this.props.noteToOpenLM(title, content)
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      notes: nextProps.notesML,
+    }, () => console.log('Completed componentWillReceiveProps()'))
+  }
+
   render() {
     return (
       <div className="NoteList">
