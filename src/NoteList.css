@@ -38,7 +38,8 @@ ul#notes > li {
   overflow: hidden;
 }
 
-ul#notes > li, ul#notes > li * {
+ul#notes > li,
+ul#notes > li * {
   transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
 }
 
@@ -47,24 +48,20 @@ ul#notes li .note {
   margin: 0 2rem;
   padding: 1rem 4px; 
 }
-
 ul#notes li:first-of-type .note {
   border-top: none; 
 }
-
 ul#notes li:hover {
   background-color: #008BF8;
 }
-
-ul#notes li:hover, ul#notes li:hover .note * {
+ul#notes li:hover,
+ul#notes li:hover .note * {
   color: white !important;
   text-decoration: none !important;
 }
-
 ul#notes li:hover .note {
   border-color: transparent;
 }
-
 ul#notes li .note-title {
   color: #4a4a4a;
   font-family: "Fauna One";
@@ -74,13 +71,11 @@ ul#notes li .note-title {
   overflow-x: hidden;
   text-overflow: ellipsis;
 }
-
 ul#notes li .note-body {
   height: 54px;
   overflow: hidden;
   margin-top: 0.5rem;
 }
-
 ul#notes li .note-body * {
   font-size: 1em !important;
   margin: 0 !important;
@@ -89,7 +84,6 @@ ul#notes li .note-body * {
   background: none;
   border: none;
 }
-
 ul#notes li .note {
   display: block;
   height: 100px;

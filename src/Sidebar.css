@@ -1,22 +1,15 @@
-img {
-  vertical-align: middle;
-}
-
 .Sidebar {
   width: 60px;
   background-color: #f3f3f3;
   padding: 0.5rem 0; 
   display: flex; 
   flex-direction: column; 
-  align-items: center;
-}
-
+  align-items: center; }
 .Sidebar .logo {
   font-family: "Fauna One";
   color: #666;
   font-size: 3rem;
 }
-
 .Sidebar .logo img {
   width: 30px;
   padding-left: 4px;
@@ -29,16 +22,11 @@ img {
   cursor: pointer;
   margin-top: 2rem;
   position: relative;
-  width: 60%;
-}
-
-.Sidebar button img {
+  width: 60%; }
+  .Sidebar button img {
     position: absolute;
     left: 0;
     width: 100%;
-    transition: opacity 0.25s ease-in-out;
-}
-
-.Sidebar button:hover img.outline {
-  opacity: 0;
-}
+    transition: opacity 0.25s ease-in-out; }
+    .Sidebar button:hover img.outline {
+      opacity: 0; }

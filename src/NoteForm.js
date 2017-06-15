@@ -1,69 +1,60 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import './NoteForm.css'
 
-class NoteForm extends React.Component {
+class NoteForm extends Component {
   constructor(props) {
     super(props)
+
     this.state = {
-      title: props.noteToOpenTitleMF,
-      content: props.noteToOpenContentMF,
+      note: this.blankNote(),
     }
-    this.deleteNote = this.deleteNote.bind(this)
-    this.saveNote = this.saveNote.bind(this)
-    this.updateTitle = this.updateTitle.bind(this)
-    this.updateNote = this.updateNote.bind(this)
   }
 
-  deleteNote(ev) {
-    ev.preventDefault()
-    this.props.titleToDeleteFM(this.state.title)
-  }
-
-  saveNote(ev) {
-    ev.preventDefault()
-    const note = {
-      noteTitle: ev.target.closest('form').childNodes[0].childNodes[0].value,
-      noteContent: ev.target.closest('form').childNodes[1].childNodes[0].value,
+  blankNote = () => {
+    return {
+      id: null,
+      title: '',
+      body: '',
     }
-    this.props.noteToSaveFM(note)
   }
 
-  updateTitle(ev) {
-    this.setState({
-      title: ev.target.value
-    })
+  handleChanges = (ev) => {
+    const note = {...this.state.note}
+    note[ev.target.name] = ev.target.value
+    this.setState(
+      { note },
+      () => this.props.saveNote(this.state.note)
+    ) 
   }
 
-  updateNote(ev) {
-    this.setState({
-      content: ev.target.value
-    })
+  handleSubmit = (ev) => {
+    ev.preventDefault()
+    this.setState({ note: this.blankNote() })
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      title: nextProps.noteToOpenTitleMF,
-      content: nextProps.noteToOpenContentMF,
-    }, () => console.log('Completed componentWillReceiveProps()'))
-  }
-  
   render() {
     return (
       <div className="NoteForm">
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <p>
-            <input type="text" name="title" value={this.state.title} onChange={this.updateTitle} placeholder="Title your note" />
+            <input
+              type="text"
+              name="title"
+              placeholder="Title your note"
+              onChange={this.handleChanges}
+              value={this.state.note.title}
+            />
           </p>
           <p>
-            <textarea name="body" cols="30" rows="10" value={this.state.content} onChange={this.updateNote} placeholder="Just start typing..."></textarea>
+            <textarea
+              name="body"
+              placeholder="Just start typing..."
+              onChange={this.handleChanges}
+              value={this.state.note.body}
+            ></textarea>
           </p>
-          <button id="delete-button" onClick={this.deleteNote}>
-            <i className="fa fa-trash-o" />
-          </button>
-          <button id="save-button" onClick={this.saveNote}>
-            <i className="fa fa-floppy-o" />
-          </button>
+          <button type="submit">Save and new</button>
         </form>
       </div>
     )

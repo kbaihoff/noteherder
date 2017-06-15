@@ -1,29 +1,12 @@
-html {
-  font-size: 10px;
-}
-
-/* body */
-
-h1, h2, h3, h4, h5 {
-  font-family: "Fauna One";
-  font-weight: 400;
-  color: #008BF8;
-}
-
-
-
-
-
-
-
-
-
-
 @import url("https://fonts.googleapis.com/css?family=Fauna+One|Oxygen:400,300,700");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
 }
 
 body {
@@ -37,25 +20,25 @@ img {
 }
 
 .App {
-  font-family: Oxygen, Helvetica, Arial, sans-serif;
-}
+  font-family: Oxygen, Helvetica, Arial, sans-serif; }
 
-.Main {
-  display: flex;
-  height: 100vh;
-  align-items: stretch;
-}
+h1, h2, h3, h4, h5 {
+font-family: "Fauna One";
+font-weight: 400;
+color: #008BF8; }
 
 i.fa-trash-o {
   cursor: pointer;
   color: #ccc;
   vertical-align: middle;
-  margin-left: 1em;
-}
+  margin-left: 1em; }
+  i.fa-trash-o:hover {
+    color: #999; }
 
-i.fa-trash-o:hover {
-  color: #999;
-}
+.Main {
+  display: flex;
+  height: 100vh;
+  align-items: stretch; }
 
 .Nav {
   width: 60px;
@@ -73,6 +56,7 @@ i.fa-trash-o:hover {
   width: 30px;
   padding-left: 4px;
 }
+
 .Nav button {
   background-color: transparent;
   border: 0;
@@ -80,28 +64,27 @@ i.fa-trash-o:hover {
   cursor: pointer;
   margin-top: 2rem;
   position: relative;
-  width: 60%;
-}
-.Nav button img {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  transition: opacity 0.25s ease-in-out;
-}
-.Nav button:hover img.outline {
-  opacity: 0;
-}
+  width: 60%; }
+  .Nav button img {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transition: opacity 0.25s ease-in-out; }
+    .Nav button:hover img.outline {
+      opacity: 0; }
 
 .NoteList {
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
   width: 30rem;
 }
+
 @media (max-width: 800px) {
   .NoteList {
     width: 20rem;
   }
 }
+
 .NoteList h3 {
   color: #999;
   text-transform: uppercase;
@@ -111,6 +94,7 @@ i.fa-trash-o:hover {
   letter-spacing: 3px;
   margin: 20px 2rem;
 }
+
 ul#notes {
   border-top: 1px solid #eee;
   overflow-y: scroll;
@@ -121,16 +105,19 @@ ul#notes {
   width: 100%;
   color: #999;
 }
+
 ul#notes > li {
   height: 100px;
   font-size: 90%;
   cursor: pointer;
   overflow: hidden;
 }
+
 ul#notes > li,
 ul#notes > li * {
   transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
 }
+
 ul#notes li .note {
   border-top: 1px solid #eee;
   margin: 0 2rem;
