@@ -34,20 +34,16 @@ class Main extends React.Component {
     this.setState({
       noteToOpenTitleMF: title,
       noteToOpenContentMF: content,
-    }, () => console.log(this.state))
+    }, () => console.log('Completed noteToOpenLM()'))
   }
 
   titleToDeleteFM(title) {
     for (let i = 0; i < this.state.notes.length; i++) {
-      console.log(title)
       if (this.state.notes[i].noteTitle === title) {
-        console.log('delete this title: ' + title)
+        this.state.notes.splice(i, 1)
       }
     }
-    
-    // this.setState({
-    //   titleToDelete: title,
-    // }, () => console.log(this.state))
+    console.log('Completed titleToDeleteFM()')
   }
     
   render() {
