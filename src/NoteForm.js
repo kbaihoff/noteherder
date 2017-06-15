@@ -3,10 +3,22 @@ import React from 'react'
 import './NoteForm.css'
 
 class NoteForm extends React.Component {
-  constructor(props) { // {notesAMLN: Object, saveNoteFMA: function, deleteNoteFMA: function} from Main.js
+  constructor(props) { // {notesAMLN, noteToOpenAMF, saveNoteFMA(), deleteNoteFMA()} from Main.js
     super(props)
     this.state = {
-      note: this.blankNote(),
+      note: (this.props.noteToOpenAMF === null ? this.blankNote() : this.props.noteToOpenAMF),
+    }
+  }
+
+  componentWillReceiveProps = (newProps) => {
+    if (newProps.noteToOpenAMF === null) {
+      return
+    }
+    if (this.props.noteToOpenAMF === null) {
+      return
+    }
+    if (this.props.noteToOpenAMF.id !== newProps.noteToOpenAMF.id) {
+      this.setState({ note: newProps.noteToOpenAMF === null ? this.blankNote() : newProps.noteToOpenAMF })
     }
   }
 

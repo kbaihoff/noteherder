@@ -8,6 +8,7 @@ class App extends React.Component {
     super()
     this.state = {
       notesAMLN: {},
+      noteToOpenAMF: {},
     }
   }
 
@@ -22,7 +23,7 @@ class App extends React.Component {
   }
 
   openNoteNLMA = (note) => {
-    console.log('openNoteNLMA() got to App.js')
+    this.setState({ noteToOpenAMF: note })
   }
 
   saveNoteFMA = (note) => {
@@ -46,6 +47,7 @@ class App extends React.Component {
         <Main
           notesAMLN={this.state.notesAMLN}
           openNoteNLMA={this.openNoteNLMA}
+          noteToOpenAMF={this.state.noteToOpenAMF}
           newNoteSMA={this.newNoteSMA}
           saveNoteFMA={this.saveNoteFMA}
           deleteNoteFMA={this.deleteNoteFMA}
