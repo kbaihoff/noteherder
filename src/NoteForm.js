@@ -24,7 +24,8 @@ class NoteForm extends React.Component {
     this.setState(
       { note: note },
       () => this.props.saveNoteFMA(this.state.note)
-    ) 
+    )
+    document.getElementById('save-button').style.backgroundColor = '#95E189'
   }
 
   handleDelete = (ev) => {
@@ -34,7 +35,7 @@ class NoteForm extends React.Component {
 
   handleSave = (ev) => {
     ev.preventDefault()
-    this.setState({ note: this.blankNote() })
+    document.getElementById('save-button').style.backgroundColor = '#ADBDAB'
   }
 
   render() {
