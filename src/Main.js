@@ -5,12 +5,12 @@ import Sidebar from './Sidebar'
 import NoteList from './NoteList'
 import NoteForm from './NoteForm'
 
-const Main = (props) => { // {notesAMLN: Object, saveNoteFMA: function, deleteNoteFMA: function} from App.js
+const Main = (props) => { // {notesAMLN, openNoteNLMA(), newNoteSMA(), saveNoteFMA(), deleteNoteFMA()} from App.js
   return (
     <div className="Main">
-      <Sidebar />
-      <NoteList notesAMLN={props.notesAMLN} />
-      <NoteForm saveNoteFMA={props.saveNoteFMA} deleteNoteFMA={props.deleteNoteFMA} />
+      <Sidebar newNoteSMA={props.newNoteSMA} />
+      <NoteList notesAMLN={props.notesAMLN} openNoteNLMA={props.openNoteNLMA} />
+      <NoteForm notesAMLN={props.notesAMLN} saveNoteFMA={props.saveNoteFMA} deleteNoteFMA={props.deleteNoteFMA} />
     </div>
   )
 }

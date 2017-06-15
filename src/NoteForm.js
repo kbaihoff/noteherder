@@ -3,7 +3,7 @@ import React from 'react'
 import './NoteForm.css'
 
 class NoteForm extends React.Component {
-  constructor(props) { // {saveNoteFMA: function, deleteNoteFMA: function} from Main.js
+  constructor(props) { // {notesAMLN: Object, saveNoteFMA: function, deleteNoteFMA: function} from Main.js
     super(props)
     this.state = {
       note: this.blankNote(),

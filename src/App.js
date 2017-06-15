@@ -11,6 +11,20 @@ class App extends React.Component {
     }
   }
 
+  newNoteSMA = (newNote) => {
+    if (!newNote.id) {
+      newNote.id = `note-${Date.now()}`
+    }
+    const notesAMLN = {...this.state.notesAMLN}
+    notesAMLN[newNote.id] = newNote
+    this.setState({ notesAMLN: notesAMLN })
+    console.log('newNoteSMA got to App.js')
+  }
+
+  openNoteNLMA = (note) => {
+    console.log('openNoteNLMA() got to App.js')
+  }
+
   saveNoteFMA = (note) => {
     if (!note.id) {
       note.id = `note-${Date.now()}`
@@ -29,7 +43,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Main notesAMLN={this.state.notesAMLN} saveNoteFMA={this.saveNoteFMA} deleteNoteFMA={this.deleteNoteFMA} />
+        <Main
+          notesAMLN={this.state.notesAMLN}
+          openNoteNLMA={this.openNoteNLMA}
+          newNoteSMA={this.newNoteSMA}
+          saveNoteFMA={this.saveNoteFMA}
+          deleteNoteFMA={this.deleteNoteFMA}
+        />
       </div>
     );
   }
