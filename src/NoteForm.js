@@ -11,12 +11,6 @@ class NoteForm extends React.Component {
   }
 
   componentWillReceiveProps = (newProps) => {
-    if (newProps.noteToOpenAMF === null) {
-      return
-    }
-    if (this.props.noteToOpenAMF === null) {
-      return
-    }
     if (this.props.noteToOpenAMF.id !== newProps.noteToOpenAMF.id) {
       this.setState({ note: newProps.noteToOpenAMF === null ? this.blankNote() : newProps.noteToOpenAMF })
     }
