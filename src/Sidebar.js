@@ -9,8 +9,8 @@ const Sidebar = (props) => { // {newNoteSMA: function} from Main.js
   function handleNewNote(ev) {
     const newNote = {
       id: null,
-      title: 'New note',
-      body: '...',
+      title: '',
+      body: '',
     }
     props.newNoteSMA(newNote)
   }

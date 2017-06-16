@@ -19,7 +19,7 @@ class App extends React.Component {
     const notesAMLN = {...this.state.notesAMLN}
     notesAMLN[newNote.id] = newNote
     this.setState({ notesAMLN: notesAMLN })
-    console.log('newNoteSMA got to App.js')
+    this.openNoteNLMA(newNote)
   }
 
   openNoteNLMA = (note) => {
