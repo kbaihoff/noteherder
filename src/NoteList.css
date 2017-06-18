@@ -32,6 +32,7 @@ ul#notes {
 }
 
 ul#notes > li {
+  background: radial-gradient(to center, white, #EFF9FF);
   height: 100px;
   font-size: 90%;
   cursor: pointer;
@@ -57,7 +58,7 @@ ul#notes li:hover {
 }
 
 ul#notes li:hover, ul#notes li:hover .note * {
-  color: white !important;
+  color: #A7DFFE !important;
   text-decoration: none !important;
 }
 
