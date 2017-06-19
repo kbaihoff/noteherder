@@ -28,11 +28,12 @@ class App extends React.Component {
   }
 
   syncNotes = () => {
+    console.log('Sync notes')
     Base.syncState(
       `${this.state.uid}/notes`, // Where (in Firebase) it goes
       {
         context: this,
-        state: 'notes', // Want to sync 'notes' (from state) with 'notes' (from Firebase)
+        state: 'notesAMLN', // Want to sync 'notes' (from state) with 'notes' (from Firebase)
       }
     )
   }
