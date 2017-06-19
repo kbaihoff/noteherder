@@ -28,12 +28,11 @@ class App extends React.Component {
   }
 
   syncNotes = () => {
-    console.log('Sync notes')
     Base.syncState(
       `${this.state.uid}/notes`, // Where (in Firebase) it goes
       {
         context: this,
-        state: 'notesAMLN', // Want to sync 'notes' (from state) with 'notes' (from Firebase)
+        state: 'notesAMLN', // Want to sync 'notesAMLN' (from state) with 'notes' (from Firebase)
       }
     )
   }
@@ -63,7 +62,7 @@ class App extends React.Component {
 
   deleteNoteFMA = (note) => {
     const notesAMLN = {...this.state.notesAMLN}
-    delete notesAMLN[note.id]
+    notesAMLN[note.id] = null // ONLY WORKS WITH FIREBASE (without Firebase, delete; Firebase will see it's gone, then try to push it back down)
     this.setState({ notesAMLN: notesAMLN })
   }
 
@@ -80,17 +79,17 @@ class App extends React.Component {
   }
 
   renderMain = () => {
+    const actions = {
+      openNoteNLMA: this.openNoteNLMA,
+      noteToOpenAMF: this.state.noteToOpenAMF,
+      newNoteSMA: this.newNoteSMA,
+      saveNoteFMA: this.saveNoteFMA,
+      deleteNoteFMA: this.deleteNoteFMA,
+    }
     return (
       <div>
         <SignOut signOut={this.signOut} />
-        <Main
-          notesAMLN={this.state.notesAMLN}
-          openNoteNLMA={this.openNoteNLMA}
-          noteToOpenAMF={this.state.noteToOpenAMF}
-          newNoteSMA={this.newNoteSMA}
-          saveNoteFMA={this.saveNoteFMA}
-          deleteNoteFMA={this.deleteNoteFMA}
-        />
+        <Main notesAMLN={this.state.notesAMLN} {...actions} />
       </div>
     )
   }
