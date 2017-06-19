@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 import './App.css';
 import Main from './Main'
+import base from './base'
+import SignIn from './SignIn'
+import SignOut from './SignOut'
 
 class App extends Component {
   constructor() {
@@ -9,7 +12,18 @@ class App extends Component {
 
     this.state = {
       notes: {},
+      uid: null,
     }
+  }
+
+  componentWillMount() {
+    base.syncState(
+      'notes',
+      {
+        context: this,
+        state: 'notes',
+      }
+    )
   }
 
   saveNote = (note) => {
@@ -21,10 +35,31 @@ class App extends Component {
     this.setState({ notes })
   }
 
+  signedIn = () => {
+    return this.state.uid
+  }
+
+  authHandler = (userData) => {
+    this.setState({ uid: userData.uid })
+  }
+
+  signOut = () => {
+    this.setState({ uid: null })
+  }
+
+  renderMain = () => {
+    return (
+      <div>
+        <SignOut signOut={this.signOut}/>
+        <Main notes={this.state.notes} saveNote={this.saveNote} />
+      </div>
+    )
+  }
+
   render() {
     return (
       <div className="App">
-        <Main notes={this.state.notes} saveNote={this.saveNote} />
+        { this.signedIn() ? this.renderMain() : <SignIn authHandler={this.authHandler} /> }
       </div>
     );
   }
