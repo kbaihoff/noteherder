@@ -1926,3 +1926,17 @@ Finish making these components look acceptable.
 ## Day 8 Homework
 
 Do the bonus credit stuff from Day 7
+
+## Day 9 Homework
+
+* Finish making this work (Link with Firebase, look up componentWillReceiveProps)
+
+### Bonus Credit
+
+* Remove the "Save and new" button and assign the functionality to the + button in the sidebar
+
+### Super Mega Bonus Credit
+
+* Add another authentication method to your app, such as Twitter, Facebook, Google, email, etc.
+
+* Remember the Firebase documentation is your friend
