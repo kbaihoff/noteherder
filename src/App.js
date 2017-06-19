@@ -2,6 +2,7 @@ import React from 'react';
 
 import './App.css';
 import Main from './Main'
+import Base from './Base'
 
 class App extends React.Component {
   constructor() { // No props; ultimate parent component
@@ -10,6 +11,16 @@ class App extends React.Component {
       notesAMLN: {},
       noteToOpenAMF: {},
     }
+  }
+
+  componentWillMount() {
+    Base.syncState(
+      'notes',
+      {
+        context: this,
+        state: 'notes',
+      }
+    )
   }
 
   newNoteSMA = (newNote) => {

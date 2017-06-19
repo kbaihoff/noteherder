@@ -1903,6 +1903,10 @@ If you have ideas for more “How To” recipes that should be on this page, [le
 
 # Noteherder
 
+## Setup
+
+Copy `Base.example.js` to `Base.js` and add the appropriate configuration for your Firebase application
+
 ## Day 7 Homework
 
 Finish making these components look acceptable.
