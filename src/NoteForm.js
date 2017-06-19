@@ -6,13 +6,13 @@ class NoteForm extends React.Component {
   constructor(props) { // {notesAMLN, noteToOpenAMF, saveNoteFMA(), deleteNoteFMA()} from Main.js
     super(props)
     this.state = {
-      note: (this.props.noteToOpenAMF === null ? this.blankNote() : this.props.noteToOpenAMF),
+      note: this.blankNote(),
     }
   }
 
   componentWillReceiveProps = (newProps) => {
-    if (this.props.noteToOpenAMF.id !== newProps.noteToOpenAMF.id) {
-      this.setState({ note: newProps.noteToOpenAMF === null ? this.blankNote() : newProps.noteToOpenAMF })
+    if (this.state.note.id !== newProps.noteToOpenAMF.id) { // this.props.currentNoteId === this.props.noteToOpenAMF.id
+      this.setState({ note: newProps.noteToOpenAMF })
     }
   }
 
