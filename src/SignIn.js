@@ -5,7 +5,8 @@ import { auth, githubProvider, googleProvider } from './Base'
 
 const SignIn = () => {
   const authenticate = () => {
-    auth.signInWithPopup(githubProvider)
+    // auth === app.auth()
+    auth.signInWithPopup(githubProvider).then((result) => {console.log(result)})
   }
 
   return (
