@@ -2,7 +2,9 @@ import React from 'react';
 
 import './App.css';
 import Main from './Main'
-import Base from './Base'
+import SignIn from './SignIn'
+import SignOut from './SignOut'
+import Base, { auth } from './Base'
 
 class App extends React.Component {
   constructor() { // No props; ultimate parent component
@@ -10,15 +12,20 @@ class App extends React.Component {
     this.state = {
       notesAMLN: {},
       noteToOpenAMF: {},
+      uid: null,
     }
   }
 
   componentWillMount() {
+    
+  }
+
+  syncNotes = () => {
     Base.syncState(
-      'notes',
+      `${this.state.uid}/notes`, // Where (in Firebase) it goes
       {
         context: this,
-        state: 'notes',
+        state: 'notes', // Want to sync 'notes' (from state) with 'notes' (from Firebase)
       }
     )
   }
@@ -52,9 +59,22 @@ class App extends React.Component {
     this.setState({ notesAMLN: notesAMLN })
   }
 
-  render() {
+  signedIn = () => {
+    return this.state.uid
+  }
+
+  authHandler = (user) => {
+    this.setState({ uid: user.uid }, this.syncNotes)
+  }
+
+  signOut = () => {
+    auth.signOut().then(this.setState({ uid: null }))
+  }
+
+  renderMain = () => {
     return (
-      <div className="App">
+      <div>
+        <SignOut signOut={this.signOut} />
         <Main
           notesAMLN={this.state.notesAMLN}
           openNoteNLMA={this.openNoteNLMA}
@@ -63,6 +83,14 @@ class App extends React.Component {
           saveNoteFMA={this.saveNoteFMA}
           deleteNoteFMA={this.deleteNoteFMA}
         />
+      </div>
+    )
+  }
+
+  render() {
+    return (
+      <div className="App">
+        { this.signedIn() ? this.renderMain() : <SignIn authHandler={this.authHandler}/> }
       </div>
     );
   }

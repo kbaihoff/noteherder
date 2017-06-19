@@ -1,16 +1,16 @@
 import Rebase from 're-base'
-import Firebase from 'firebase/app'
-import Database from 'firebase/database'
+import firebase from 'firebase/app'
+import database from 'firebase/database'
 
-const app = Firebase.initializeApp({
-  apiKey: "YOUR API KEY HERE",
+const app = firebase.initializeApp({
+  apiKey: "YOUR API KEY",
   authDomain: "YOUR-APP.firebaseapp.com",
-  databaseURL: "https://YOUR-PROJECT-ID.firebaseio.com",
-  projectId: "YOUR-PROJECT-ID",
-  storageBucket: "",
-  messagingSenderId: "YOUR-MESSAGING-ID",
+  databaseURL: "https://YOUR-APP.firebaseio.com",
+  projectId: "YOUR-APP",
+  storageBucket: "YOUR-APP.appspot.com",
+  messagingSenderId: "YOUR MESSAGING SENDER ID"
 })
 
-const db = Database(app)
+const db = database(app)
 
 export default Rebase.createClass(db)
