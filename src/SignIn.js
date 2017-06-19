@@ -6,9 +6,6 @@ import { auth, githubProvider } from './Base'
 const SignIn = ({ authHandler }) => {
   const authenticate = () => {
     auth.signInWithPopup(githubProvider).then((data) => {authHandler(data.user)})
-    authHandler({
-      uid: 'kbaihoff'
-    })
   }
 
   return (
