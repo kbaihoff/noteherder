@@ -28,7 +28,8 @@ class App extends React.Component {
 
   syncNotes = () => {
     this.ref = Base.syncState(
-      `${this.state.uid}/notes`, // Where (in Firebase) it goes
+      `notes/${this.state.uid}`, // Where (in Firebase) it goes
+      // `${this.state.uid}/notes`,  // to change the Firebase endpoint
       {
         context: this,
         state: 'notesAMLN', // Want to sync 'notesAMLN' (from state) with 'notes' (from Firebase)
