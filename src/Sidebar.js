@@ -3,6 +3,7 @@ import React from 'react'
 import quill from './quill.svg'
 import newHover from './new-hover.png'
 import newIcon from './new.png'
+import SignOut from './SignOut'
 import './Sidebar.css'
 
 const Sidebar = (props) => { // {newNoteSMA: function} from Main.js
@@ -24,6 +25,7 @@ const Sidebar = (props) => { // {newNoteSMA: function} from Main.js
         <img src={newHover} alt="New note" />
         <img className="outline" src={newIcon} alt="New note" />
       </button>
+      <SignOut signOut={props.signOutSMA} />
     </div>
   )
 }

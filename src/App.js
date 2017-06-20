@@ -3,7 +3,6 @@ import React from 'react';
 import './App.css';
 import Main from './Main'
 import SignIn from './SignIn'
-import SignOut from './SignOut'
 import Base, { auth } from './Base'
 
 class App extends React.Component {
@@ -75,7 +74,7 @@ class App extends React.Component {
     this.setState({ uid: user.uid }, this.syncNotes)
   }
 
-  signOut = () => {
+  signOutSMA = () => {
     auth.signOut()
   }
 
@@ -86,12 +85,10 @@ class App extends React.Component {
       newNoteSMA: this.newNoteSMA,
       saveNoteFMA: this.saveNoteFMA,
       deleteNoteFMA: this.deleteNoteFMA,
+      signOutSMA: this.signOutSMA,
     }
     return (
-      <div>
-        <SignOut signOut={this.signOut} />
-        <Main notesAMLN={this.state.notesAMLN} {...actions} />
-      </div>
+      <Main notesAMLN={this.state.notesAMLN} {...actions} />
     )
   }
 
