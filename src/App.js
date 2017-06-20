@@ -58,12 +58,12 @@ class App extends React.Component {
     }
     const notesAMLN = {...this.state.notesAMLN}
     notesAMLN[note.id] = note
-    this.setState({ notesAMLN: notesAMLN })
+    this.setState({ notesAMLN: notesAMLN, noteToOpenAMF: note })
   }
 
   deleteNoteFMA = (note) => {
     const notesAMLN = {...this.state.notesAMLN}
-    notesAMLN[note.id] = null // ONLY WORKS WITH FIREBASE (without Firebase, delete; Firebase will see it's gone, then try to push it back down)
+    notesAMLN[note.id] = null // ONLY WORKS WITH FIREBASE (w/o Firebase, delete; Firebase sees it's gone, then push it back down)
     this.setState({ notesAMLN: notesAMLN })
   }
 
