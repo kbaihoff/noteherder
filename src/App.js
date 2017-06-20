@@ -27,7 +27,7 @@ class App extends React.Component {
   }
 
   syncNotes = () => {
-    Base.syncState(
+    this.ref = Base.syncState(
       `${this.state.uid}/notes`, // Where (in Firebase) it goes
       {
         context: this,
@@ -75,7 +75,12 @@ class App extends React.Component {
   }
 
   signOutSMA = () => {
-    auth.signOut()
+    auth.signOut().then(
+      () => {
+        Base.removeBinding(this.ref)
+        this.setState({ uid: null, noteToOpenAMF: {}, notesAMLN: {} })
+      }
+    )
   }
 
   renderMain = () => {
