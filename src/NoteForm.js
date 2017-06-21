@@ -39,7 +39,7 @@ class NoteForm extends React.Component {
           <p>
             <textarea name="body" placeholder="Just start typing..." onChange={this.handleChanges} value={this.props.noteToOpenAMF.body}></textarea>
           </p>
-          <button id="delete-button" onClick={this.handleDelete} >
+          <button id="delete-button" type="button" onClick={this.handleDelete} >
             <i className="fa fa-trash-o" />
           </button>
           <button id="save-button" type="submit">
