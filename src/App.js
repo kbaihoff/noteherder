@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom'
 
 import './App.css';
 import Main from './Main'
@@ -84,7 +85,7 @@ class App extends React.Component {
     )
   }
 
-  renderMain = () => {
+  render() {
     const actions = {
       openNoteNLMA: this.openNoteNLMA,
       noteToOpenAMF: this.state.noteToOpenAMF,
@@ -93,15 +94,15 @@ class App extends React.Component {
       deleteNoteFMA: this.deleteNoteFMA,
       signOutSMA: this.signOutSMA,
     }
-    return (
-      <Main notesAMLN={this.state.notesAMLN} {...actions} />
-    )
-  }
 
-  render() {
     return (
       <div className="App">
-        { this.signedIn() ? this.renderMain() : <SignIn /> }
+        <Switch>
+          <Route path='/notes' render={() => (<Main notesAMLN={this.state.notesAMLN} {...actions} />)} />
+          <Route path='/sign-in' render={() => <SignIn />} />
+        </Switch>
+        {/* this.signedIn() ? this.renderMain() : <SignIn /> */}
+        {/* component={} can't pass in additional props, render={() =>} lets you specify */}
       </div>
     );
   }

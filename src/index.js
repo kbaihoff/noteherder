@@ -8,7 +8,7 @@ import './index.css';
 
 ReactDOM.render(
   <Router>
-    <Route component={App} /> {/* component={} can't pass in additional props, render={() =>} lets you specify */}
+    <Route component={App} />
   </Router>,
   document.getElementById('root')
 );
