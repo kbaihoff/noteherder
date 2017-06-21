@@ -98,8 +98,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <Switch>
-          <Route path='/notes' render={() => (<Main notesAMLN={this.state.notesAMLN} {...actions} />)} />
-          <Route path='/sign-in' render={() => <SignIn />} />
+          <Route path="/notes" render={() => (<Main notesAMLN={this.state.notesAMLN} {...actions} />)} />
+          <Route path="/sign-in" component={SignIn} />} />
+          <Route render={() => <Redirect to="/notes" />} />
         </Switch>
         {/* this.signedIn() ? this.renderMain() : <SignIn /> */}
         {/* component={} can't pass in additional props, render={() =>} lets you specify */}
