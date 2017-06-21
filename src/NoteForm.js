@@ -42,9 +42,6 @@ class NoteForm extends React.Component {
           <button id="delete-button" type="button" onClick={this.handleDelete} >
             <i className="fa fa-trash-o" />
           </button>
-          <button id="save-button" type="submit">
-            <i className="fa fa-floppy-o" />
-          </button>
         </form>
       </div>
     )
