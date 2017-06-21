@@ -50,6 +50,11 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
     document.querySelector('textarea').style.fontStyle = (document.querySelector('textarea').style.fontStyle === 'italic' ? 'normal' : 'italic')
   }
 
+  handleUnderline = (ev) => {
+    ev.preventDefault()
+    document.querySelector('textarea').style.textDecoration = (document.querySelector('textarea').style.textDecoration === 'underline' ? 'none' : 'underline')
+  }
+
   handleDelete = (ev) => {
     this.props.deleteNoteFMA(this.props.noteToOpenAMF)
   }
@@ -66,6 +71,9 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
           </button>
           <button id="italic-button" className="rich" type="button" onClick={this.handleItalic}>
             <i className="fa fa-italic" />
+          </button>
+          <button id="underline-button" className="rich" type="button" onClick={this.handleUnderline}>
+            <i className="fa fa-underline" />
           </button>
           <p>
             <textarea name="body" placeholder="Just start typing..." onChange={this.handleChanges} value={this.props.noteToOpenAMF.body} />
