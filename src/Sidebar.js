@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import quill from './quill.svg'
 import newHover from './new-hover.png'
@@ -21,10 +22,12 @@ const Sidebar = (props) => { // {resetNoteToOpenAMF(), signOut()} from Main.js
       <div className="logo">
         <img src={quill} alt="Noteherder" />
       </div>
-      <button className="new-note" onClick={props.resetNoteToOpenAMF}>
-        <img src={newHover} alt="New note" />
-        <img className="outline" src={newIcon} alt="New note" />
-      </button>
+      <Link to="/notes">
+        <button className="new-note">
+          <img src={newHover} alt="New note" />
+          <img className="outline" src={newIcon} alt="New note" />
+        </button>
+      </Link>
       <SignOut signOut={props.signOutSMA} />
     </div>
   )
