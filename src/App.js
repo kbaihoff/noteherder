@@ -98,24 +98,26 @@ class App extends React.Component {
   signOutSMA = () => {
     auth.signOut().then(
       () => {
+        this.resetNoteToOpenAMF()
+        localStorage.removeItem('uid')
+        this.setState({ uid: null, notesAMLN: {} })
         Base.removeBinding(this.ref)
-        this.setState({ uid: null, noteToOpenAMF: {}, notesAMLN: {} })
       }
     )
   }
 
   render() {
     const noteData = {
-      notesAMLN: this.state.notesAMLN,
-      noteToOpenAMF: this.state.noteToOpenAMF,
+      notesAMLN: this.state.notesAMLN, // notes
+      noteToOpenAMF: this.state.noteToOpenAMF, // currentNote
     }
 
     const actions = {
-      saveNoteFMA: this.saveNoteFMA,
-      deleteNoteFMA: this.deleteNoteFMA,
-      setNoteToOpenAMF: this.setNoteToOpenAMF,
-      resetNoteToOpenAMF: this.resetNoteToOpenAMF,
-      signOutSMA: this.signOutSMA,
+      saveNoteFMA: this.saveNoteFMA, // saveNote
+      deleteNoteFMA: this.deleteNoteFMA, // removeNote
+      setNoteToOpenAMF: this.setNoteToOpenAMF, // setCurrentNote
+      resetNoteToOpenAMF: this.resetNoteToOpenAMF, // resetCurrentNote
+      signOutSMA: this.signOutSMA, // signOut
     }
 
     return (
