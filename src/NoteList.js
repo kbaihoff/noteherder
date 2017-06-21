@@ -4,7 +4,6 @@ import './NoteList.css'
 import Note from './Note'
 
 const NoteList = (props) => { // {notesAMLN} from Main.js
-  console.log(props)
   return (
     <div className="NoteList">
       <h3>Notes</h3>
