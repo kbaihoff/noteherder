@@ -6,14 +6,21 @@
   flex-direction: column; 
   align-items: center;
 }
+
 .Sidebar .logo {
   font-family: "Fauna One";
   color: #666;
   font-size: 3rem;
 }
+
 .Sidebar .logo img {
   width: 30px;
   padding-left: 4px;
+}
+
+.Sidebar a.new-note {
+  width: 100%;
+  position: relative;
 }
 
 .Sidebar button {
@@ -25,6 +32,7 @@
   position: relative;
   width: 60%;
 }
+
 .Sidebar button img {
   position: absolute;
   left: 0;
