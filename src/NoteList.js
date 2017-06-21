@@ -3,7 +3,7 @@ import React from 'react'
 import './NoteList.css'
 import Note from './Note'
 
-const NoteList = (props) => { // {notesAMLN, setNoteToOpenAMF()} from Main.js
+const NoteList = (props) => { // {notesAMLN} from Main.js
   console.log(props)
   return (
     <div className="NoteList">

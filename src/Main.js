@@ -6,7 +6,7 @@ import Sidebar from './Sidebar'
 import NoteList from './NoteList'
 import NoteForm from './NoteForm'
 
-const Main = (props) => { // {notesAMLN, openNoteNLMA(), noteToOpenAMF, setNoteToOpenAMF(), resetNoteToOpenAMF(), saveNoteFMA(), deleteNoteFMA(), signOutSMA()} from App.js
+const Main = (props) => { // {notesAMLN, noteToOpen, saveNoteFMA(), deleteNote(), setNoteToOpenAMF(), signOut()} from App.js
   console.log(props)
   
   return (

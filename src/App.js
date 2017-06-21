@@ -62,18 +62,24 @@ class App extends React.Component {
   // }
 
   saveNoteFMA = (note) => { // saveNote
+    let shouldRedirect = false
     if (!note.id) {
       note.id = `note-${Date.now()}`
+      shouldRedirect = true
     }
     const notesAMLN = {...this.state.notesAMLN}
     notesAMLN[note.id] = note
     this.setState({ notesAMLN: notesAMLN, noteToOpenAMF: note })
+    if (shouldRedirect) {
+      this.props.history.push(`/notes/${note.id}`)
+    }
   }
 
   deleteNoteFMA = (note) => { // removeNote
     const notesAMLN = {...this.state.notesAMLN}
     notesAMLN[note.id] = null // ONLY WORKS WITH FIREBASE (w/o Firebase, delete; Firebase sees it's gone, then push it back down)
-    this.setState({ notesAMLN: notesAMLN }, this.resetNoteToOpenAMF())
+    this.resetNoteToOpenAMF()
+    this.setState({ notesAMLN: notesAMLN }, this.props.history.push('/notes'))
   }
 
   blankNote = () => {
