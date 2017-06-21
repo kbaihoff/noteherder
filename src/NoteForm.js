@@ -25,6 +25,10 @@ class NoteForm extends React.Component {
     this.props.saveNoteFMA(note)
   }
 
+  handleBold = (ev) => {
+    console.log('BOLD!')
+  }
+
   handleDelete = (ev) => {
     this.props.deleteNoteFMA(this.props.noteToOpenAMF)
   }
@@ -36,6 +40,9 @@ class NoteForm extends React.Component {
           <p>
             <input type="text" name="title" placeholder="Title your note" onChange={this.handleChanges} value={this.props.noteToOpenAMF.title} />
           </p>
+          <button id="bold-button" type="button" onClick={this.handleBold}>
+            <i className="fa fa-bold" />
+          </button>
           <p>
             <textarea name="body" placeholder="Just start typing..." onChange={this.handleChanges} value={this.props.noteToOpenAMF.body}></textarea>
           </p>

@@ -21,19 +21,17 @@
   padding: 1rem;
 }
 
-.NoteForm button i.fa {
-  color: white;
-  font-size: 2rem;
-  margin: 0;
+.NoteForm button#bold-button {
+  background-color: whitesmoke;
+  border: 1px solid gray;
+  color: gray;
 }
 
 .NoteForm button#delete-button {
   background-color: #EE4D43;
-}
-
-.NoteForm button[type="submit"] {
-  background-color: #95E189;
-  float: right;
+  color: white;
+  font-size: 2rem;
+  margin: 0;
 }
 
 .NoteForm form {
@@ -58,7 +56,7 @@ input[name="title"] {
 textarea {
   border-color: #eee;
   width: 100%;
-  height: calc(100vh - 140px);
+  height: calc(100vh - 200px);
   font-size: 1.3em;
   padding: 8px;
 }
