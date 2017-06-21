@@ -28,32 +28,32 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
     this.props.saveNoteFMA(note)
   }
 
-  handleSelection = (ev) => {
-    console.log(ev.currentTarget.innerHTML)
-    ev.currentTarget.value = document.getSelection().toString().bold()
-    // document.getSelection().baseNode.toggleClass('bold')
-    // this.setState({ selected: document.getSelection() })
-    // document.getElementsByName("body")[0].textContent = document.getSelection().toString().bold()
-    // document.getElementsByName("body")[0].style.fontWeight = 'bold'
-    // console.log(this.state.selected, document.getSelection())
-    // console.log(document.querySelector('textarea').value)
-    // document.querySelector('textarea').value = document.getSelection().toString().bold()
-  }
+  // handleSelection = (ev) => {
+  //   console.log(ev.currentTarget.innerHTML)
+  //   ev.currentTarget.value = document.getSelection().toString().bold()
+  //   document.getSelection().baseNode.toggleClass('bold')
+  //   this.setState({ selected: document.getSelection() })
+  //   document.getElementsByName("body")[0].textContent = document.getSelection().toString().bold()
+  //   document.getElementsByName("body")[0].style.fontWeight = 'bold'
+  //   console.log(this.state.selected, document.getSelection())
+  //   console.log(document.querySelector('textarea').value)
+  //   document.querySelector('textarea').value = document.getSelection().toString().bold()
+  // }
 
-  handleBold = (ev) => {
-    ev.preventDefault()
-    document.querySelector('textarea').style.fontWeight = (document.querySelector('textarea').style.fontWeight === 'bold' ? 'normal' : 'bold')
-  }
+  // handleBold = (ev) => {
+  //   ev.preventDefault()
+  //   document.querySelector('textarea').style.fontWeight = (document.querySelector('textarea').style.fontWeight === 'bold' ? 'normal' : 'bold')
+  // }
 
-  handleItalic = (ev) => {
-    ev.preventDefault()
-    document.querySelector('textarea').style.fontStyle = (document.querySelector('textarea').style.fontStyle === 'italic' ? 'normal' : 'italic')
-  }
+  // handleItalic = (ev) => {
+  //   ev.preventDefault()
+  //   document.querySelector('textarea').style.fontStyle = (document.querySelector('textarea').style.fontStyle === 'italic' ? 'normal' : 'italic')
+  // }
 
-  handleUnderline = (ev) => {
-    ev.preventDefault()
-    document.querySelector('textarea').style.textDecoration = (document.querySelector('textarea').style.textDecoration === 'underline' ? 'none' : 'underline')
-  }
+  // handleUnderline = (ev) => {
+  //   ev.preventDefault()
+  //   document.querySelector('textarea').style.textDecoration = (document.querySelector('textarea').style.textDecoration === 'underline' ? 'none' : 'underline')
+  // }
 
   handleDelete = (ev) => {
     this.props.deleteNoteFMA(this.props.noteToOpenAMF)
