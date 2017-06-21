@@ -17,14 +17,20 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        this.authHandler(user)
+    this.getUserFromLocalStorage()
+    auth.onAuthStateChanged(
+      (user) => {
+        if (user) {
+          this.authHandler(user)
+        }
       }
-      else {
-        this.setState({ uid: null })
-      }
-    })
+    )
+  }
+
+  getUserFromLocalStorage() {
+    const uid = localStorage.getItem('uid')
+    if (!uid) return
+    this.setState({ uid })
   }
 
   syncNotes = () => {
@@ -68,12 +74,24 @@ class App extends React.Component {
     this.setState({ notesAMLN: notesAMLN })
   }
 
+  blankNote = () => {
+    return {
+      id: null,
+      title: '',
+      body: '',
+    }
+  }
+
   signedIn = () => {
     return this.state.uid
   }
 
-  authHandler = (user) => {
-    this.setState({ uid: user.uid }, this.syncNotes)
+  authHandler = (userData) => {
+    localStorage.setItem('uid', userData.uid)
+    this.setState(
+      { uid: userData.uid },
+      this.syncNotes
+    )
   }
 
   signOutSMA = () => {
