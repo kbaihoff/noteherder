@@ -7,8 +7,6 @@ import NoteList from './NoteList'
 import NoteForm from './NoteForm'
 
 const Main = (props) => { // {notesAMLN, noteToOpen, saveNoteFMA(), deleteNote(), setNoteToOpenAMF(), signOut()} from App.js
-  console.log(props)
-  
   return (
     <div className="Main">
       <Sidebar signOutSMA={props.signOutSMA} />

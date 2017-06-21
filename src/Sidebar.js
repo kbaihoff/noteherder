@@ -8,15 +8,6 @@ import SignOut from './SignOut'
 import './Sidebar.css'
 
 const Sidebar = (props) => { // {resetNoteToOpenAMF(), signOut()} from Main.js
-  // function handleNewNote(ev) {
-  //   const newNote = {
-  //     id: null,
-  //     title: '',
-  //     body: '',
-  //   }
-  //   props.newNoteSMA(newNote)
-  // }
-  
   return (
     <div className="Sidebar">
       <div className="logo">

@@ -46,21 +46,6 @@ class App extends React.Component {
     )
   }
 
-  // newNoteSMA = (newNote) => {
-  //   if (!newNote.id) {
-  //     newNote.id = `note-${Date.now()}`
-  //     this.setState({ noteToOpenAMF: newNote })
-  //   }
-  //   const notesAMLN = {...this.state.notesAMLN}
-  //   notesAMLN[newNote.id] = newNote
-  //   this.setState({ notesAMLN: notesAMLN })
-  //   this.openNoteNLMA(newNote)
-  // }
-
-  // openNoteNLMA = (note) => {
-  //   this.setState({ noteToOpenAMF: note })
-  // }
-
   saveNoteFMA = (note) => { // saveNote
     let shouldRedirect = false
     if (!note.id) {
@@ -131,9 +116,6 @@ class App extends React.Component {
       setNoteToOpenAMF: this.setNoteToOpenAMF,
       resetNoteToOpenAMF: this.resetNoteToOpenAMF,
       signOutSMA: this.signOutSMA,
-
-
-      noteToOpenAMF: this.state.noteToOpenAMF,
     }
 
     return (

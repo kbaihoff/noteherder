@@ -4,13 +4,6 @@ import './NoteForm.css'
 
 class NoteForm extends React.Component {
   // {notesAMLN, noteToOpenAMF, saveNoteFMA(), deleteNoteFMA()} from Main.js
-  // constructor(props) { 
-  //   super(props)
-  //   this.state = {
-  //     note: this.blankNote(),
-  //   }
-  // }
-
   componentWillReceiveProps = (nextProps) => {
     if (nextProps.match.params.id) {
       const newId = nextProps.match.params.id
@@ -24,41 +17,17 @@ class NoteForm extends React.Component {
     else if (this.props.noteToOpenAMF.id) {
       this.props.resetNoteToOpenAMF()
     }
-    // this.props.setCurrentNote(note)
-    // if (this.state.note.id !== newProps.noteToOpenAMF.id) { // this.props.currentNoteId === this.props.noteToOpenAMF.id
-    //   this.setState({ note: newProps.noteToOpenAMF })
-    // }
   }
-
-  // blankNote = () => {
-  //   return {
-  //     id: null,
-  //     title: '',
-  //     body: '',
-  //   }
-  // }
 
   handleChanges = (ev) => {
     const note = {...this.props.noteToOpenAMF}
     note[ev.target.name] = ev.target.value
-    // this.setState(
-    //   { note: note },
-    //   () => this.props.saveNoteFMA(this.state.note)
-    // )
     this.props.saveNoteFMA(note)
-    // document.getElementById('save-button').style.backgroundColor = '#95E189'
   }
 
   handleDelete = (ev) => {
-    // this.props.deleteNoteFMA(this.state.note)
-    // this.setState({ note: this.blankNote() })
     this.props.deleteNoteFMA(this.props.noteToOpenAMF)
   }
-
-  // handleSave = (ev) => {
-  //   ev.preventDefault()
-  //   document.getElementById('save-button').style.backgroundColor = '#ADBDAB'
-  // }
 
   render() {
     return (
