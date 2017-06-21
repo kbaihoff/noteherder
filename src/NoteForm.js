@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Toolbar from './Toolbar'
 import './NoteForm.css'
 
 class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteFMA(), deleteNoteFMA()} from Main.js
@@ -59,6 +60,16 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
     this.props.deleteNoteFMA(this.props.noteToOpenAMF)
   }
 
+          // <button id="bold-button" className="rich" type="button" onClick={this.handleBold}>
+          //   <i className="fa fa-bold" />
+          // </button>
+          // <button id="italic-button" className="rich" type="button" onClick={this.handleItalic}>
+          //   <i className="fa fa-italic" />
+          // </button>
+          // <button id="underline-button" className="rich" type="button" onClick={this.handleUnderline}>
+          //   <i className="fa fa-underline" />
+          // </button>
+
   render() {
     return (
       <div className="NoteForm">
@@ -66,15 +77,6 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
           <p>
             <input type="text" name="title" placeholder="Title your note" onChange={this.handleChanges} value={this.props.noteToOpenAMF.title} />
           </p>
-          <button id="bold-button" className="rich" type="button" onClick={this.handleBold}>
-            <i className="fa fa-bold" />
-          </button>
-          <button id="italic-button" className="rich" type="button" onClick={this.handleItalic}>
-            <i className="fa fa-italic" />
-          </button>
-          <button id="underline-button" className="rich" type="button" onClick={this.handleUnderline}>
-            <i className="fa fa-underline" />
-          </button>
           <p>
             <textarea name="body" placeholder="Just start typing..." onChange={this.handleChanges} value={this.props.noteToOpenAMF.body} />
           </p>
