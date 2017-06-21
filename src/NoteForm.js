@@ -12,6 +12,12 @@ class NoteForm extends React.Component {
   // }
 
   componentWillReceiveProps = (newProps) => {
+    if (this.props.match.params.id) {
+      const newId = this.props.match.params.id
+      const note = this.props.notesAMLN[newId]
+      // this.props.setCurrentNote(note)
+    }
+    // this.props.setCurrentNote(note)
     // if (this.state.note.id !== newProps.noteToOpenAMF.id) { // this.props.currentNoteId === this.props.noteToOpenAMF.id
     //   this.setState({ note: newProps.noteToOpenAMF })
     // }

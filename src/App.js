@@ -11,8 +11,8 @@ class App extends React.Component {
     super()
     this.state = {
       notesAMLN: {}, // notes
-      noteToOpenAMF: {},
       uid: null, // currentNoteId
+      noteToOpenAMF: this.blankNote(),
     }
   }
 
@@ -59,7 +59,7 @@ class App extends React.Component {
     this.setState({ noteToOpenAMF: note })
   }
 
-  saveNoteFMA = (note) => {
+  saveNoteFMA = (note) => { // saveNote
     if (!note.id) {
       note.id = `note-${Date.now()}`
     }
@@ -68,7 +68,7 @@ class App extends React.Component {
     this.setState({ notesAMLN: notesAMLN, noteToOpenAMF: note })
   }
 
-  deleteNoteFMA = (note) => {
+  deleteNoteFMA = (note) => { // removeNote
     const notesAMLN = {...this.state.notesAMLN}
     notesAMLN[note.id] = null // ONLY WORKS WITH FIREBASE (w/o Firebase, delete; Firebase sees it's gone, then push it back down)
     this.setState({ notesAMLN: notesAMLN })
@@ -80,6 +80,14 @@ class App extends React.Component {
       title: '',
       body: '',
     }
+  }
+
+  setNoteToOpenAMF = (note) => { // setCurrentNote
+    this.setState({ noteToOpenAMF: note })
+  }
+
+  resetNoteToOpenAMF = () => { // resetCurrentNote
+    this.setNoteToOpenAMF(this.blankNote())
   }
 
   signedIn = () => {
