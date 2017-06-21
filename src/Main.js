@@ -12,8 +12,8 @@ const Main = (props) => { // {notesAMLN, noteToOpen, saveNoteFMA(), deleteNote()
       <Sidebar signOutSMA={props.signOutSMA} />
       <NoteList notesAMLN={props.notesAMLN} />
       <Switch>
-        <Route path="/notes/:id" render={(navProps) => <NoteForm {...props} {...navProps}/>}/>
-        <Route render={(navProps) => <NoteForm {...props} {...navProps}/>}/>
+        <Route path="/notes/:id" render={(navProps) => <NoteForm {...props} {...navProps} />} />
+        <Route render={(navProps) => <NoteForm {...props} {...navProps} />}/>
       </Switch>
       
     </div>

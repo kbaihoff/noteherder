@@ -9,7 +9,6 @@ const Note = (props) => { // {note, key} from NoteList.js
           <div className="note-title">{props.note.title}</div>
           <div className="note-body">
             <p>{props.note.body}</p>
-            <p style={{display: 'none'}}>{props.note.id}</p>
           </div>
         </div>
       </li>
