@@ -11,12 +11,14 @@ class NoteForm extends React.Component {
   //   }
   // }
 
-  componentWillReceiveProps = (newProps) => {
-    if (this.props.match.params && this.props.match.params.id) {
-      const newId = this.props.match.params.id
+  componentWillReceiveProps = (nextProps) => {
+    if (nextProps.match.params.id) {
+      const newId = nextProps.match.params.id
       if (newId !== this.props.noteToOpenAMF.id) {
-        const note = this.props.notesAMLN[newId]
-        this.props.setNoteToOpenAMF(note)
+        const note = nextProps.notesAMLN[newId]
+        if (note) {
+          this.props.setNoteToOpenAMF(note)
+        }
       }
     }
     // this.props.setCurrentNote(note)
@@ -41,7 +43,7 @@ class NoteForm extends React.Component {
     //   () => this.props.saveNoteFMA(this.state.note)
     // )
     this.props.saveNoteFMA(note)
-    document.getElementById('save-button').style.backgroundColor = '#95E189'
+    // document.getElementById('save-button').style.backgroundColor = '#95E189'
   }
 
   handleDelete = (ev) => {
@@ -58,7 +60,7 @@ class NoteForm extends React.Component {
   render() {
     return (
       <div className="NoteForm">
-        <form onSubmit={this.handleSave}>
+        <form>
           <p>
             <input type="text" name="title" placeholder="Title your note" onChange={this.handleChanges} value={this.props.noteToOpenAMF.title} />
           </p>

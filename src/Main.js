@@ -12,7 +12,7 @@ const Main = (props) => { // {notesAMLN, openNoteNLMA(), noteToOpenAMF, setNoteT
   return (
     <div className="Main">
       <Sidebar resetNoteToOpenAMF={props.resetNoteToOpenAMF} signOutSMA={props.signOutSMA} />
-      <NoteList notesAMLN={props.notesAMLN} setNoteToOpenAMF={props.setNoteToOpenAMF} />
+      <NoteList notesAMLN={props.notesAMLN} />
       <Switch>
         <Route path="/notes/:id" render={(navProps) => <NoteForm {...props} {...navProps}/>}/>
         <Route path="/notes" render={(navProps) => <NoteForm {...props} {...navProps}/>}/>

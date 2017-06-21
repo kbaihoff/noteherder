@@ -10,7 +10,7 @@ const NoteList = (props) => { // {notesAMLN, setNoteToOpenAMF()} from Main.js
       <h3>Notes</h3>
       <ul id="notes">
         { Object.keys(props.notesAMLN).map((noteId) => {
-          return <Note note={props.notesAMLN[noteId]} key={noteId} setNoteToOpenAMF={props.setNoteToOpenAMF} />
+          return <Note note={props.notesAMLN[noteId]} key={noteId} />
         }) }
       </ul>
     </div>

@@ -29,7 +29,9 @@ class App extends React.Component {
 
   getUserFromLocalStorage() {
     const uid = localStorage.getItem('uid')
-    if (!uid) return
+    if (!uid) {
+      return
+    }
     this.setState({ uid })
   }
 
@@ -71,7 +73,7 @@ class App extends React.Component {
   deleteNoteFMA = (note) => { // removeNote
     const notesAMLN = {...this.state.notesAMLN}
     notesAMLN[note.id] = null // ONLY WORKS WITH FIREBASE (w/o Firebase, delete; Firebase sees it's gone, then push it back down)
-    this.setState({ notesAMLN: notesAMLN })
+    this.setState({ notesAMLN: notesAMLN }, this.resetNoteToOpenAMF())
   }
 
   blankNote = () => {
@@ -118,12 +120,14 @@ class App extends React.Component {
     }
 
     const actions = {
-      noteToOpenAMF: this.state.noteToOpenAMF,
-      setNoteToOpenAMF: this.setNoteToOpenAMF,
-      resetNoteToOpenAMF: this.resetNoteToOpenAMF,
       saveNoteFMA: this.saveNoteFMA,
       deleteNoteFMA: this.deleteNoteFMA,
+      setNoteToOpenAMF: this.setNoteToOpenAMF,
+      resetNoteToOpenAMF: this.resetNoteToOpenAMF,
       signOutSMA: this.signOutSMA,
+
+
+      noteToOpenAMF: this.state.noteToOpenAMF,
     }
 
     return (
