@@ -21,10 +21,11 @@
   padding: 1rem;
 }
 
-.NoteForm button#bold-button {
+.NoteForm button.rich {
   background-color: whitesmoke;
   border: 1px solid gray;
   color: gray;
+  padding: 5px;
 }
 
 .NoteForm button#delete-button {
@@ -37,6 +38,10 @@
 .NoteForm form {
   margin: 0 auto;
   max-width: 80rem;
+}
+
+.NoteForm .bold {
+  font-weight: bold;
 }
 
 input[name="title"] {
