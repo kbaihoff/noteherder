@@ -27,6 +27,7 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
         const note = nextProps.notesAMLN[newId]
         if (note) {
           this.props.setNoteToOpenAMF(note)
+          console.log(convertToRaw(this.state.editorState.getCurrentContent()).blocks[0].text)
         }
       }
     }
