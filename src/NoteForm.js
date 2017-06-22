@@ -1,9 +1,6 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { Editor, EditorState, RichUtils, convertToRaw } from 'draft-js'
 
-import Toolbar from './Toolbar'
-import DraftEditor from './DraftEditor'
 import './NoteForm.css'
 
 class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteFMA(), deleteNoteFMA()} from Main.js
