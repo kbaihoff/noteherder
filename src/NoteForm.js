@@ -1,11 +1,27 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
+import { Editor, EditorState, RichUtils, convertToRaw } from 'draft-js'
 
 import Toolbar from './Toolbar'
+import DraftEditor from './DraftEditor'
 import './NoteForm.css'
 
 class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteFMA(), deleteNoteFMA()} from Main.js
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     editorState: EditorState.createEmpty()
+  //   }
+  // }
+
   state = {
-    selected: {},
+    editorState: EditorState.createEmpty()
+  }
+
+  
+
+  handleBold = (ev) => {
+    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'BOLD'))
   }
 
   componentWillReceiveProps = (nextProps) => {
@@ -29,6 +45,14 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
     this.props.saveNoteFMA(note)
   }
 
+  onChange = (editorState) => {
+    this.setState({ editorState })
+    const note = {...this.props.noteToOpenAMF}
+    note['body'] = convertToRaw(this.state.editorState.getCurrentContent()).blocks[0].text
+    console.log(note)
+    this.props.saveNoteFMA(note)
+  }
+
   // handleSelection = (ev) => {
   //   console.log(ev.currentTarget.innerHTML)
   //   ev.currentTarget.value = document.getSelection().toString().bold()
@@ -44,6 +68,10 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
   // handleBold = (ev) => {
   //   ev.preventDefault()
   //   document.querySelector('textarea').style.fontWeight = (document.querySelector('textarea').style.fontWeight === 'bold' ? 'normal' : 'bold')
+  // }
+
+  // handleBold = (ev) => {
+  //   this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'BOLD'))
   // }
 
   // handleItalic = (ev) => {
@@ -69,6 +97,8 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
           // <button id="underline-button" className="rich" type="button" onClick={this.handleUnderline}>
           //   <i className="fa fa-underline" />
           // </button>
+          // <Editor editorState={this.state.editorState} onChange={this.onChange} placeHolder="This is the editor" />
+          // <textarea editorState={this.state.editorState} name="body" placeholder="Just start typing..." onChange={this.handleChanges} value={this.props.noteToOpenAMF.body} />
 
   render() {
     return (
@@ -77,8 +107,11 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
           <p>
             <input type="text" name="title" placeholder="Title your note" onChange={this.handleChanges} value={this.props.noteToOpenAMF.title} />
           </p>
+          <button id="bold-button" className="rich" type="button" onClick={this.handleBold}>
+            <i className="fa fa-bold" />
+          </button>
           <p>
-            <textarea name="body" placeholder="Just start typing..." onChange={this.handleChanges} value={this.props.noteToOpenAMF.body} />
+            <Editor editorState={this.state.editorState} onChange={this.onChange} placeHolder="Just start typing..." />
           </p>
           <button id="delete-button" type="button" onClick={this.handleDelete} >
             <i className="fa fa-trash-o" />
