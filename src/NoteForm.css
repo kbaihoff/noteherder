@@ -73,5 +73,6 @@ textarea {
   width: 100%;
   height: calc(100vh - 180px);
   font-size: 1.3em;
+  opacity: .9;
   padding: 8px;
 }
