@@ -12,6 +12,14 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
     this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'BOLD'))
   }
 
+  handItalics = (ev) => {
+    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'ITALIC'))
+  }
+
+  handleUline = (ev) => {
+    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'UNDERLINE'))
+  }
+
   componentWillReceiveProps = (nextProps) => {
     if (nextProps.match.params.id) {
       const newId = nextProps.match.params.id
@@ -93,6 +101,12 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
           </p>
           <button id="bold-button" className="rich" type="button" onClick={this.handleBold}>
             <i className="fa fa-bold" />
+          </button>
+          <button id="italics-button" className="rich" type="button" onClick={this.handItalics}>
+            <i className="fa fa-italic" />
+          </button>
+          <button id="uline-button" className="rich" type="button" onClick={this.handleUline}>
+            <i className="fa fa-underline" />
           </button>
           <p>
             <Editor editorState={this.state.editorState} onChange={this.onChange} placeHolder="Just start typing..." />
