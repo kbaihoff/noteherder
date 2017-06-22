@@ -75,17 +75,17 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
     this.setState({ editorState: EditorState.createEmpty() })
   }
 
-          // <button id="bold-button" className="rich" type="button" onClick={this.handleBold}>
-          //   <i className="fa fa-bold" />
-          // </button>
-          // <button id="italic-button" className="rich" type="button" onClick={this.handleItalic}>
-          //   <i className="fa fa-italic" />
-          // </button>
-          // <button id="underline-button" className="rich" type="button" onClick={this.handleUnderline}>
-          //   <i className="fa fa-underline" />
-          // </button>
-          // <Editor editorState={this.state.editorState} onChange={this.onChange} placeHolder="This is the editor" />
-          // <textarea editorState={this.state.editorState} name="body" placeholder="Just start typing..." onChange={this.handleChanges} value={this.props.noteToOpenAMF.body} />
+  // <button id="bold-button" className="rich" type="button" onClick={this.handleBold}>
+  //   <i className="fa fa-bold" />
+  // </button>
+  // <button id="italic-button" className="rich" type="button" onClick={this.handleItalic}>
+  //   <i className="fa fa-italic" />
+  // </button>
+  // <button id="underline-button" className="rich" type="button" onClick={this.handleUnderline}>
+  //   <i className="fa fa-underline" />
+  // </button>
+  // <Editor editorState={this.state.editorState} onChange={this.onChange} placeHolder="This is the editor" />
+  // <textarea editorState={this.state.editorState} name="body" placeholder="Just start typing..." onChange={this.handleChanges} value={this.props.noteToOpenAMF.body} />
 
   render() {
     return (
