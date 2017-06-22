@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Toolbar from './Toolbar'
 import './NoteForm.css'
 
 class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteFMA(), deleteNoteFMA()} from Main.js
