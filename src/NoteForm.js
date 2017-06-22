@@ -109,7 +109,7 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
             <i className="fa fa-underline" />
           </button>
           <p>
-            <Editor editorState={this.state.editorState} onChange={this.onChange} placeHolder="Just start typing..." />
+            <Editor id="edit" editorState={this.state.editorState} onChange={this.onChange} placeHolder="Just start typing..." />
           </p>
           <button id="delete-button" type="button" onClick={this.handleDelete} >
             <i className="fa fa-trash-o" />

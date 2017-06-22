@@ -66,3 +66,12 @@ textarea {
   font-size: 1.3em;
   padding: 8px;
 }
+
+.NoteForm .DraftEditor-root {
+  border-color: #eee;
+  background-color: white;
+  width: 100%;
+  height: calc(100vh - 180px);
+  font-size: 1.3em;
+  padding: 8px;
+}
