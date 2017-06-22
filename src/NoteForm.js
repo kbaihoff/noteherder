@@ -80,6 +80,10 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
     this.setState({ editorState: EditorState.createEmpty() })
   }
 
+  handlemerge = () => {
+    console.log('merge already')
+  }
+
   // <button id="bold-button" className="rich" type="button" onClick={this.handleBold}>
   //   <i className="fa fa-bold" />
   // </button>
