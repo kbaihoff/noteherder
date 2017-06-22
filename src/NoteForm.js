@@ -7,18 +7,9 @@ import DraftEditor from './DraftEditor'
 import './NoteForm.css'
 
 class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteFMA(), deleteNoteFMA()} from Main.js
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     editorState: EditorState.createEmpty()
-  //   }
-  // }
-
   state = {
     editorState: EditorState.createEmpty()
   }
-
-  
 
   handleBold = (ev) => {
     this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'BOLD'))
@@ -49,7 +40,6 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
     this.setState({ editorState })
     const note = {...this.props.noteToOpenAMF}
     note['body'] = convertToRaw(this.state.editorState.getCurrentContent()).blocks[0].text
-    console.log(note)
     this.props.saveNoteFMA(note)
   }
 
@@ -70,10 +60,6 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
   //   document.querySelector('textarea').style.fontWeight = (document.querySelector('textarea').style.fontWeight === 'bold' ? 'normal' : 'bold')
   // }
 
-  // handleBold = (ev) => {
-  //   this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'BOLD'))
-  // }
-
   // handleItalic = (ev) => {
   //   ev.preventDefault()
   //   document.querySelector('textarea').style.fontStyle = (document.querySelector('textarea').style.fontStyle === 'italic' ? 'normal' : 'italic')
@@ -86,6 +72,7 @@ class NoteForm extends React.Component { // {notesAMLN, noteToOpenAMF, saveNoteF
 
   handleDelete = (ev) => {
     this.props.deleteNoteFMA(this.props.noteToOpenAMF)
+    this.setState({ editorState: EditorState.createEmpty() })
   }
 
           // <button id="bold-button" className="rich" type="button" onClick={this.handleBold}>
